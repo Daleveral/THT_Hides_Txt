@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Blind Watermark</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <script src="/static/script.js" defer></script>
+</head>
+
+<body>
+    <main class="container">
+        <h1>
+            <a href="https://github.com/guofei9987/text_blind_watermark" target="_blank" style="text-decoration: none;" onmouseover="this.style.color='#579ce0cd'" onmouseout="this.style.color='black'">
+            Text Blind Watermark
+            </a>
+        </h1>
+        
+        <section class="horizontal-layout">
+            <!-- Embed Section -->
+            <div class="card">
+                <h2>嵌入信息 ( Embed ) </h2>
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input id="passwordEmbed" type="text" placeholder="使用密码加密 ( 只隐写不加密可留空 )">
+                </div>
+                <div class="form-group">
+                    <label>Text:</label>
+                    <textarea id="textEmbed" rows="4" placeholder="载体文本"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Watermark:</label>
+                    <input id="watermarkEmbed" type="text" placeholder="想要隐写的内容">
+                </div>
+                <button class="button" onclick="embedWatermark()">Embed info</button>
+                <div class="result framed" id="resultEmbed">
+                    <p id="embedOutput"></p>
+                    <button class="copy-btn" onclick="copyToClipboard('embedOutput')"><strong>COPY</strong></button>
+                </div>
+            </div>
+
+            <!-- Extract Section -->
+            <div class="card">
+                <h2>提取信息 ( Extract )</h2>
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input id="passwordExtract" type="text" placeholder="输入口令">
+                </div>
+                <div class="form-group">
+                    <label>Text with Watermark:</label>
+                    <textarea id="textExtract" rows="4" placeholder="输入已携带水印的文本"></textarea>
+                </div>
+                <button class="button" onclick="extractWatermark()">Extract info</button>
+                <div class="result framed" id="resultExtract">
+                    <p id="extractOutput"></p>
+                    <button class="copy-btn" onclick="copyToClipboard('extractOutput')"><strong>COPY</strong></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Copy Success Popup -->
+        <div id="copySuccess" class="copy-success-popup">Copied to clipboard!</div>
+    </main>
+</body>
+</html>
+
