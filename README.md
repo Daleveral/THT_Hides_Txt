@@ -11,4 +11,4 @@ pip install flask text_blind_watermark
 python app.py
 ```
 
-( dear dolly : no pswd actually
+去多移移鼠标吧孩子
